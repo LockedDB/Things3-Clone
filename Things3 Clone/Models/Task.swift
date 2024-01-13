@@ -10,13 +10,13 @@ import SwiftData
 
 @Model
 class Task {
-    private var title: String
-    private var content: String
-    private var dueDate: Date
-    private var status: TaskStatus
-    private var creationDate: Date
+    var title: String
+    var content: String
+    var dueDate: Date
+    var status: TaskStatus
+    var creationDate: Date
     
-    private var tags: [Tag]
+    var tags: [Tag]
     
     init(title: String, content: String, dueDate: Date, status: TaskStatus, creationDate: Date, tags: [Tag]) throws {
         guard !title.isEmpty, title.count <= 50 else {

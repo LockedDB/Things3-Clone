@@ -11,8 +11,8 @@ import SwiftData
 
 @Model
 class Tag {
-    private var name: String
-    private var color: String?
+    var name: String
+    var color: String?
     
     init(name: String, color: String? = nil) throws {
         

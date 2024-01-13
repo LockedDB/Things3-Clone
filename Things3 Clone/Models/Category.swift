@@ -10,10 +10,11 @@ import SwiftData
 
 @Model
 class Category {
-    private var name: String
-    private var note: String
+    var name: String
+    var note: String
     
-    private var projects: [Project]
+    @Relationship(deleteRule: .cascade)
+    var projects: [Project]
     
     init(name: String, note: String, projects: [Project]) throws {
         

@@ -9,14 +9,15 @@ import Foundation
 import SwiftData
 
 @Model
-class Project {
-    private var name: String
-    private var note: String
-    private var startDate: Date
-    private var endDate: Date
-    private var status: ProjectStatus
+final class Project {
+    var name: String
+    var note: String
+    var startDate: Date
+    var endDate: Date
+    var status: ProjectStatus
     
-    private var tasks: [Task]
+    @Relationship(deleteRule: .cascade)
+    var tasks: [Task]
     
     init(name: String, note: String, startDate: Date, endDate: Date, status: ProjectStatus, tasks: [Task]) throws {
         
